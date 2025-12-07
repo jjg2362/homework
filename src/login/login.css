@@ -1,10 +1,43 @@
+:root {
+  --font-size-base: 1rem;
+  --color-focus: #24388d;
+  --color-primary: #03cf5d;
+  --color-input-border: #dadada;
+  --color-input-bg-focus: #e9f0fd;
+  --color-error: #fF0000;
+
+  --color-black: #121212;
+  --color-white: #fff;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+}
+
 body {
-  margin: 0; 
-  padding: 0; 
+  margin: 0;
+  font-size: var(--font-size-base);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+  color: var(--color-black);
+}
+
+body {
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .container { 
-  max-width: 100vw;
+  max-width: 760px;
+  padding: 0 1.25rem;
   width: 100%;
   height: 100%;
   display: flex;
@@ -13,7 +46,8 @@ body {
 
 /* 로고 섹션 */
 .logo_section{
-  text-align: center;
+  display: flex;
+  justify-content: center;
   margin-bottom: 40px;
 }
 
@@ -30,16 +64,37 @@ body {
 }
 
 .login_form_field {
+  width: inherit;
+  margin-bottom: 0.625rem;
+
+  input {
+    box-shadow: none;
+    padding: 0.625rem;
+    width: 100%;
+    height: 2.8125rem;
+    border-color: var(--color-input-border);
+    background-color: var(--color-input-bg);
+    transition: all 0.3s ease;
+
+    &:focus {
+      outline: 0;
+      border-color: var(--color-primary);
+      background-color: var(--color-input-bg-focus); 
+    }
+  }
+
+  &:last-child {
+    margin-bottom: 0;
+  }
 }
 
 .form_section {
   display: flex;
   flex-direction: column;
-  margin-bottom: 20px;
 }
 
 .login_error_msg {
-  color: red;
+  color: var(--color-error);
   font-size: 14px;
   margin-top: 6px;
   display: none;
@@ -53,21 +108,52 @@ input:valid + .login_error_msg {
   display: none;
 }
 
+.login_button{
+  margin-top: 0.625rem;
+  font-size: 1rem;
+  color: var(--color-white);
+  height: 2.8125rem;
+  background-color: var(--color-primary);
+  padding: 0 1.25rem;
+  border: 0;
+}
+
 /* 옵션 섹션 */
 .option_section {
+  margin-top: 0.625rem;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: end;
 }
 
 .keep_login {
   display: inline-flex;
   align-items: center;
   cursor: pointer;
+}
 
-  input {
-    position: absolute;
-    width: 0;
-    height: 0;
-  }
+.keep_login_input{
+  position: absolute;
+  width: 0;
+  height: 0;
+}
+
+.keep_login_icon{
+  width: 1.5rem;
+  height: 1.5rem;
+  margin-right: 0.3125rem;
+  object-fit: contain;
+  display: inline-block;
+}
+
+.keep_login_input:checked + .keep_login_icon {
+  content: url("./assets/checked.svg");
+}
+
+.keep_login_input:not(checked) + .keep_login_icon {
+  content: url("./assets/unchecked.svg");
+}
+
+.ip_security{
+  display: none;
 }

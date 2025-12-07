@@ -4,16 +4,19 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./login.css" />
+    <link rel="stylesheet" href="/src/common/mordern-reset.css" />
     <title>login</title>
   </head>
   <body>
     <div class="container">
+      <!-- 로고 섹션 -->
       <section class="logo_section">
         <h1 class="logo">
           <img src="./assets/naver.svg" alt="naver 로고"/>
         </h1>
       </section>
 
+      <!-- 폼 섹션 -->
       <section class="form_section">
         <form class="login_form" novalidate>
           <div class="login_form_field">
@@ -30,18 +33,21 @@
         </form>
       </section>
 
+      <!-- 옵션 섹션 -->
       <section class="option_section">
         <label class="keep_login">
-          <input type="checkbox" id="keep_login" name="keep_login"/>
-          <span class="keep_login_icon" aria-hidden="true"></span>
+          <input class="keep_login_input" type="checkbox" id="keep_login" name="keep_login"/>
+          <img src="./assets/unchecked.svg" alt="로그인 유지 체크박스" class="keep_login_icon" />
           로그인 상태 유지
         </label>
 
-        <a href="#" class="ip_security">IP 보안</a>
+        <div class="ip_security">
+          <label class="ip_security_toggle">
+            <input type="checkbox" id="ip_security_toggle" name="ip_security_toggle"/>
+          </label>
+        </div>
 
-        <label class="ip_security_toggle">
-          <input type="checkbox" id="ip_security_toggle" name="ip_security_toggle"/>
-        </label>
+        <a href="#" class="ip_security">IP 보안</a>
       </section>
     </div>
   </body>
