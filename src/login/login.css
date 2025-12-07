@@ -1,0 +1,44 @@
+body {
+  margin: 0; 
+  padding: 0; 
+}
+
+.container { 
+  max-width: 100vw;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.logo_section{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.logo {
+  width: 230px;
+}
+
+.login_form{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.login_error_msg {
+  color: red;
+  font-size: 14px;
+  margin-top: 6px;
+  display: none;
+}
+
+input:invalid:not(:placeholder-shown) + .login_error_msg {
+  display: block;
+}
+
+input:valid + .login_error_msg {
+  display: none;
+}
