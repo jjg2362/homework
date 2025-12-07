@@ -8,10 +8,13 @@
   </head>
   <body>
     <div class="container">
+      <section class="logo_section">
         <h1 class="logo">
-          <img src="../assets/logo/naver.svg" alt="naver 로고"/>
+          <img src="./assets/naver.svg" alt="naver 로고"/>
         </h1>
+      </section>
 
+      <section class="form_section">
         <form class="login_form" novalidate>
           <div class="login_form_field">
             <input type="email" id="userId" name="userId" placeholder="아이디" required>
@@ -19,12 +22,27 @@
           </div>
 
           <div class="login_form_field">
-            <input type="password" placeholder="비밀번호">
+            <input type="password" id="userPassword" name="userPassword" placeholder="비밀번호" pattern=".{10,}" required>
             <p class="login_error_msg">비밀번호는 10자리 이상 입력해 주세요.</p>
           </div>
 
-          <button type="submit">로그인</button>
+          <button class="login_button" type="submit">로그인</button>
         </form>
+      </section>
+
+      <section class="option_section">
+        <label class="keep_login">
+          <input type="checkbox" id="keep_login" name="keep_login"/>
+          <span class="keep_login_icon" aria-hidden="true"></span>
+          로그인 상태 유지
+        </label>
+
+        <a href="#" class="ip_security">IP 보안</a>
+
+        <label class="ip_security_toggle">
+          <input type="checkbox" id="ip_security_toggle" name="ip_security_toggle"/>
+        </label>
+      </section>
     </div>
   </body>
 </html>
